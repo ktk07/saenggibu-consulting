@@ -246,6 +246,13 @@ code {
   font-weight: 800;
 }
 
+.compact {
+  width: auto;
+  min-height: 38px;
+  margin-top: 0;
+  padding: 0 14px;
+}
+
 .board-hero {
   margin: 24px 0;
   padding: 36px;
@@ -293,6 +300,227 @@ code {
   margin-bottom: 0;
 }
 
+.career-builder {
+  margin-top: 28px;
+  padding: 32px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+}
+
+.career-heading {
+  max-width: 760px;
+}
+
+.career-heading h2 {
+  margin-bottom: 10px;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.career-heading p:last-child,
+.career-panel .muted {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.career-progress {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+  margin: 26px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.career-progress li {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.career-progress span {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #eef2f7;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.career-progress .active {
+  color: var(--accent-strong);
+  border-color: rgba(15, 118, 110, 0.4);
+  background: var(--soft);
+}
+
+.career-progress .active span {
+  color: white;
+  background: var(--accent);
+}
+
+.career-panel {
+  padding-top: 6px;
+}
+
+.career-panel h3 {
+  margin-bottom: 10px;
+  font-size: 1.35rem;
+}
+
+.career-choice-row,
+.career-actions,
+.career-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.career-panel-header {
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.career-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.career-form > div:first-child,
+.career-form .career-actions {
+  grid-column: 1 / -1;
+}
+
+.career-form label {
+  display: grid;
+  gap: 8px;
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.career-form input,
+.career-form select {
+  width: 100%;
+  min-height: 42px;
+  padding: 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  color: var(--ink);
+}
+
+.career-form input:focus,
+.career-form select:focus {
+  outline: 2px solid rgba(15, 118, 110, 0.24);
+  border-color: var(--accent);
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.career-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.career-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfdfc;
+}
+
+.career-card-topline {
+  display: flex;
+  justify-content: flex-end;
+  color: var(--rose);
+  font-size: 0.85rem;
+  font-weight: 900;
+}
+
+.career-card h4,
+.identity-panel h4 {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.45;
+}
+
+.career-card p {
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.career-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.career-tags span {
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--accent-strong);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.career-card dl,
+.identity-panel dl {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.career-card dt,
+.identity-panel dt {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.career-card dd,
+.identity-panel dd {
+  margin: 4px 0 0;
+  line-height: 1.55;
+}
+
+.career-card .career-actions {
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+
+.feedback-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.identity-panel {
+  display: grid;
+  gap: 18px;
+}
+
+.identity-panel dl {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 [hidden] {
   display: none !important;
 }
@@ -321,6 +549,18 @@ code {
   .board-grid {
     grid-template-columns: 1fr;
   }
+
+  .career-progress,
+  .career-form,
+  .career-cards,
+  .identity-panel dl {
+    grid-template-columns: 1fr;
+  }
+
+  .career-panel-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 520px) {
@@ -340,7 +580,19 @@ code {
 
   .auth-card,
   .board-hero,
-  .summary-card {
+  .summary-card,
+  .career-builder,
+  .career-card {
     padding: 20px;
+  }
+
+  .career-choice-row,
+  .career-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .compact {
+    width: 100%;
   }
 }

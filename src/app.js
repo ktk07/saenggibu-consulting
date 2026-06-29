@@ -8,6 +8,7 @@ import {
   signInWithPopup,
   signOut,
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+import { initCareerBuilder } from "./features/career/careerBuilder.js";
 
 const firebaseConfig = window.__FIREBASE_CONFIG__ ?? {};
 const hasFirebaseConfig = ["apiKey", "authDomain", "projectId", "appId"].every(
@@ -24,6 +25,7 @@ const authMessage = document.querySelector("#auth-message");
 const userPhoto = document.querySelector("#user-photo");
 const userName = document.querySelector("#user-name");
 const userEmail = document.querySelector("#user-email");
+const careerBuilderSection = document.querySelector("#career-builder-section");
 
 let auth;
 let provider;
@@ -91,6 +93,7 @@ function showMainboard(user) {
   userEmail.textContent = user.email ?? "";
   userPhoto.src = user.photoURL ?? "";
   userPhoto.hidden = !user.photoURL;
+  initCareerBuilder(careerBuilderSection);
 }
 
 function setLoginPending(isPending) {
